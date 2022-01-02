@@ -53,7 +53,7 @@ All of my favorite brew taps
 All of my favorite functions, plugins, and aliases for ZSH.
 This also installs `oh-my-zsh` as a conveniance if you don't have it.
 
-[View .zshrc](zsh/.zshrc)
+[View .zshrc](dot_zshrc.tmpl)
 
 ### Fish 🐚
 
