@@ -1,0 +1,7 @@
+#!/bin/bash
+
+PACKAGES="awscli docker docker-compose fd gh glow go-task/tap/go-task golangci-lint goreleaser hugo jq kubectl packer prettier protobuf reviewdog/tap/reviewdog ripgrep rustup-init starship terraform tldr vim yarn zsh fish hashicorp/tap/terraform-ls"
+
+for i in $PACKAGES; do
+    brew install "$i"
+done

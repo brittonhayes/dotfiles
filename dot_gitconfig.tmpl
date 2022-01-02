@@ -1,0 +1,13 @@
+[credential "https://github.com"]
+	helper = !gh auth git-credential
+[user]
+	name = {{ .name | quote }}
+	email = {{ .email | quote }}
+    signingkey = {{ .git.signingkey | quote }}
+[init]
+    defaultBranch = main
+
+{{ if ne .git.signingkey "" -}}
+[commit]
+    gpgsign = true
+{{- end}}

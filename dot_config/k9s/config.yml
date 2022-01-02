@@ -19,9 +19,7 @@ k9s:
   clusters:
     default:
       namespace:
-        active: waypoint
         favorites:
-        - waypoint
         - all
         - default
       view:
