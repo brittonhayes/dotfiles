@@ -1,6 +1,5 @@
 # SET VARIABLES
 set -x GPG_TTY (tty)
-set -gx EDITOR vim
 set -gx GOPATH "$HOME/golang"
 set -gx GOBIN "$GOPATH/bin"
 set -gx GO111MODULE "on"
@@ -8,6 +7,12 @@ set -gx PATH "$PATH:$GOPATH/bin:$GOROOT/bin"
 set -gx GOSUMDB "off"
 set -gx PATH $PATH $HOME/.krew/bin
 set -gx PATH $HOME/.rbenv/bin $PATH
+
+{{if (eq .chezmoi.os "linux") -}}
+    set EDITOR nvim
+{{else -}}
+    set EDITOR code --wait
+{{- end }}
 
 # Initialize starship
 starship init fish | source
