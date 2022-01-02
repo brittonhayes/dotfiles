@@ -36,6 +36,7 @@ The dotfiles can be customized by creating a file named `~/.config/chezmoi.toml`
   fontsize = 12.0
 
 [data.git]
+  username = "Your username"
   signingkey = ""
 ```
 
