@@ -1,6 +1,6 @@
 # SET VARIABLES
 set -x GPG_TTY (tty)
-set -gx GOPATH "{{ .chezmoi.homeDir }}/{{ .go.folder }}"
+set -gx GOPATH "{{ .chezmoi.homeDir }}/go"
 set -gx GOBIN "$GOPATH/bin"
 set -gx GO111MODULE "on"
 set -gx PATH "$PATH:$GOPATH/bin:$GOROOT/bin"
