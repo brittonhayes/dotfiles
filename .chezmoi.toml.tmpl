@@ -1,7 +1,7 @@
-{{- $email := promptStringOnce . "email" "Email address" -}}
-{{- $editor := promptStringOnce . "editor" "Preferred text editor" -}}
-{{- $gituser := promptStringOnce . "gituser" "Your git username" -}}
-{{- $install_apps := promptBoolOnce . "install_apps", "Install apps?" -}}
+{{- $email := promptString . "email" "Email address" -}}
+{{- $editor := promptString . "editor" "Preferred text editor" -}}
+{{- $gituser := promptString . "gituser" "Your git username" -}}
+{{- $install_apps := promptBool . "install_apps", "Install apps?" -}}
 
 [data]
   name = "Britton Hayes"
