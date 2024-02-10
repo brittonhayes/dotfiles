@@ -1,0 +1,13 @@
+{{- $email := promptStringOnce . "email" "Email address" -}}
+{{- $editor := promptStringOnce . "editor" "Preferred text editor" -}}
+{{- $gituser := promptStringOnce . "gituser" "Your git username" -}}
+{{- $install_apps := promptBoolOnce . "install_apps", "Install apps?" -}}
+
+[data]
+  name = "Britton Hayes"
+  email =  {{ $email | quote }}
+  editor = {{ $editor | quote }}
+
+[data.git]
+  username = {{ $gituser | quote }}
+  signingkey = ""
