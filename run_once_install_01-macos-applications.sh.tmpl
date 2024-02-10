@@ -1,0 +1,5 @@
+{{- if and (.install_apps) (eq .chezmoi.os "darwin") -}}
+#!/usr/bin/env bash
+
+brew bundle install --no-lock --file "$HOME/Brewfile"
+{{ end -}}
