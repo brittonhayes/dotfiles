@@ -28,12 +28,4 @@ if [ $? -ne 0 ]; then
     npm install -g tldr
 fi
 
-{{- if eq .chezmoi.os "darwin" }}
-PACKAGES="awscli fd gh glow go-task/tap/go-task golangci-lint goreleaser jq kubectl prettier protobuf ripgrep rustup-init terraform tldr vim yarn zsh fish"
-for i in $PACKAGES; do
-    brew install "$i"
-done
-{{ end }}
-
-
 {{ end -}}
