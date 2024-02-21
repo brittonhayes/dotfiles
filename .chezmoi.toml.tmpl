@@ -2,12 +2,17 @@
 {{- $editor := promptStringOnce . "editor" "Preferred text editor" -}}
 {{- $gituser := promptStringOnce . "gituser" "Your git username" -}}
 {{- $install_apps := promptBoolOnce . "install_apps" "Install apps?" -}}
+{{- $osid := .chezmoi.os -}}
+{{- if hasKey .chezmoi.osRelease "id" -}}
+{{-   $osid = printf "%s-%s" .chezmoi.os .chezmoi.osRelease.id -}}
+{{- end -}}
 
 [data]
   name = "Britton Hayes"
   email =  {{ $email | quote }}
   editor = {{ $editor | quote }}
   install_apps = {{ $install_apps | quote }}
+  osid = {{ $osid | quote }}
 
 [data.git]
   username = {{ $gituser | quote }}
