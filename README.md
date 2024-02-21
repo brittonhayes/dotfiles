@@ -83,15 +83,9 @@ committed to git repositories.
 
 [My .gitignore](dot_config/dot_gitignore-system)
 
-## Aesthetic Stuff 👓
+### Powerlevel10k 🚀
 
-![image](https://user-images.githubusercontent.com/46035482/111725294-0cce9f00-8824-11eb-8f0b-f0aac695b499.png)
-
-> This is what my shell prompt looks like. Nothin too crazy, but I'm into it. Gives all the info I need to know right inline.
-
-### Powerline10k Prompt 🚀
-
-I use the powerline10k prompt. It's pretty great. I recommend it.
+I use the [powerlevel10k](https://github.com/romkatv/powerlevel10k) theme for zsh. It's pretty great. I recommend it.
 
 ### Fonts 📜
 
