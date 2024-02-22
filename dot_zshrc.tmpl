@@ -1,15 +1,11 @@
-{{ if eq .osid "darwin" -}}
+{{ if eq .chezmoi.os "darwin" }}
+# Mac Specific Configuration
 # Path to my oh-my-zsh installation.
 export ZSH="{{ .chezmoi.homeDir }}/.oh-my-zsh"
-
 ZSH_THEME="powerlevel10k/powerlevel10k"
-
 source $ZSH/oh-my-zsh.sh
 
 plugins=(z git sudo zsh-autosuggestions zsh-syntax-highlighting)
-
-# USER CONFIG
-export GOPATH="{{ .chezmoi.homeDir }}/go"
 
 # ALIASES
 alias vi="vim"
@@ -18,8 +14,11 @@ alias python="python3"
 alias kubectl="k"
 alias ..='cd ..'
 alias ...='cd ../..'
-
-{{ else if eq .osid "linux-arch" }}
+{{ else if eq .chezmoi.os "linux" }}
+# Linux specific configuration
+alias vc='code --disable-gpu' # gui code editor
+{{ if eq .chezmoi.osRelease.id "arch" }}
+# Arch specific configuration
 
 # In case a command is not found, try to find the package that has it
 function command_not_found_handler {
@@ -57,7 +56,6 @@ function in {
     fi
 }    
 
-
 # Helpful aliases
 alias  l='eza -lh  --icons=auto' # long list
 alias ls='eza -1   --icons=auto' # short list
@@ -68,9 +66,9 @@ alias up='$aurhelper -Syu' # update system/package/aur
 alias pl='$aurhelper -Qs' # list installed package
 alias pa='$aurhelper -Ss' # list availabe package
 alias pc='$aurhelper -Sc' # remove unused cache
-alias po='$aurhelper -Qtdq | $aurhelper -Rns -' # remove unused packages, also try > $aurhelper -Qqd | $aurhelper -Rsu --print -
-alias vc='code --disable-gpu' # gui code editor
-
+alias po='$aurhelper -Qtdq | $aurhelper -Rns -' 
+{{ end }}
+{{ end }}
 {{ end }}
 
 # EDITOR
@@ -98,3 +96,4 @@ source "{{.chezmoi.homeDir}}/.oh-my-zsh/custom/themes/powerlevel10k"
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 export PATH="$PATH:{{ .chezmoi.homeDir }}/go/bin"
+export GOPATH="{{ .chezmoi.homeDir }}/go"
