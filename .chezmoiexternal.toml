@@ -18,3 +18,10 @@
     exact = true
     stripComponents = 1
     refreshPeriod = "672h"
+
+[".config/nvim"]
+    type = "git-repo"
+    url = "https://github.com/LazyVim/starter"
+    refreshPeriod = "168h"
+    [".config/nvim".pull]
+        args = ["--ff-only"]
