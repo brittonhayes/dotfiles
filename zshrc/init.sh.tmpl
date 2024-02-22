@@ -16,6 +16,8 @@ alias kubectl="k"
 alias ..='cd ..'
 alias ...='cd ../..'
 
+{{ if eq.chezmoi.os "linux" }}
+
 {{ if eq .chezmoi.osRelease.id "arch" }}
 # Arch specific configuration
 
@@ -67,4 +69,5 @@ function command_not_found_handler {
     fi
     return 127
 }
+{{ end }}
 {{ end }}
