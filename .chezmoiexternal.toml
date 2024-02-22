@@ -11,3 +11,10 @@
     exact = true
     stripComponents = 1
     refreshPeriod = "672h"
+
+[".oh-my-zsh/custom/plugins/zsh-256color"]
+    type = "archive"
+    url = "https://github.com/chrissicool/zsh-256color/archive/master.tar.gz"
+    exact = true
+    stripComponents = 1
+    refreshPeriod = "672h"
